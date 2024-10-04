@@ -4,7 +4,7 @@ import './assets/css/styles.css';
 import './assets/css/styles-1180.css';
 import './assets/css/styles-780.css';
 import './assets/css/styles-480.css';
-import Modal from "./components/ordinary/Modal";
+import Modal from "./components/ordinary/modal/Modal";
 
 function App() {
     const [isModalOpen, setIsModalOpen] = useState(true);

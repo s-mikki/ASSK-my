@@ -1,5 +1,5 @@
 @media (max-width: 780px) {
-  .header__container {
-    padding: 10px 20px;
+  .modal__content {
+    padding: 30px 30px 35px;
   }
 }

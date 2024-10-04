@@ -7,7 +7,7 @@ const options = [
     { value: 'Организация 3', label: 'Организация 3' },
 ];
 
-class Dropdown extends React.Component {
+class Dropdown extends React.Component <{placeText?: string, classes?: string}> {
     state = {
         selectedOption: null,
         isOpen: false,
@@ -29,17 +29,17 @@ class Dropdown extends React.Component {
 
     render() {
         const { selectedOption, isOpen } = this.state;
-
-
+        const {placeText} = this.props;
+        const {classes} = this.props;
 
         return (
             <Select
-                className={`dropdown ${isOpen ? ' dropdown--open' : ''}`}
+                className={`dropdown ${isOpen ? ' dropdown--open' : ''} ${classes}`}
                 classNamePrefix="react-select"
                 value={selectedOption}
                 onChange={this.handleChange}
                 options={options}
-                placeholder="Выберите организацию"
+                placeholder={placeText}
                 onMenuOpen={this.handleMenuOpen}
                 onMenuClose={this.handleMenuClose}
             />

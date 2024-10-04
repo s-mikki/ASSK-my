@@ -226,7 +226,7 @@ body.fixed {
   display: flex;
   width: 100%;
   max-width: 590px;
-  padding: 30px 70px 40px 70px;
+  padding: 30px 70px 40px;
   align-items: center;
   text-align: center;
   flex-direction: column;
@@ -289,7 +289,7 @@ body.fixed {
 
 .submit {
   max-width: 210px;
-  min-height: 40px;
+  min-height: 44px;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -303,6 +303,7 @@ body.fixed {
   text-align: center;
   cursor: pointer;
   font-size: 18px;
+  line-height: 22px;
   transition: 0.2s;
 }
 
@@ -365,6 +366,7 @@ body.fixed {
   position: absolute;
   left: 20px;
   top: 20px;
+  height: 30px;
 }
 
 .back-btn:hover {
@@ -462,6 +464,10 @@ body.fixed {
   position: relative;
 }
 
+.dropdown--search .react-select__value-container{
+  padding: 14px 20px 14px 50px !important;
+}
+
 .react-select__placeholder {
   color: rgba(var(--slate-opacity), 0.70);
   font-size: 16px;
@@ -489,6 +495,21 @@ body.fixed {
   flex-shrink: 0;
   align-items: center;
   right: 20px;
+}
+
+.dropdown--search:before {
+  content: "";
+  position: absolute;
+  background-image: url("/src/assets/images/search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  align-items: center;
+  left: 20px;
+  z-index: 2;
 }
 
 .dropdown--open:after {

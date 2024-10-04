@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import StepButton from "./StepButton";
-import Dropdown from "../../components/smart/select/Dropdown";
+import StepButton from "../step-button/StepButton";
+import Dropdown from "../../smart/select/Dropdown";
 
 const Modal = ({
   modalOpen,
@@ -64,7 +64,6 @@ const Modal = ({
     handleNextStep();
   };
 
-  // Определяем количество шагов в зависимости от типа организации
   const totalSteps = selectedOrganizationType === "educational" ? 5 : 4;
 
   const isNextButtonEnabled =
@@ -113,16 +112,16 @@ const Modal = ({
                     <h2 className="modal__title">Настройка профиля</h2>
                     <p className="modal__text">Выберите организацию</p>
                 </div>
-                <Dropdown/>
                 <div className="modal__container">
+                    <Dropdown placeText="Выберите организаию"/>
                     <label className="checkbox" htmlFor="check">
                         <input id="check" className="checkbox__input" type="checkbox" onChange={handleSSKCheckboxChange}/>
                         <span className="checkbox__indicator"/>
                         <span className="checkbox__text">Представляю ССК</span>
                     </label>
-                    <Dropdown/>
                 </div>
-                <button className="submit" onClick={handleSubmit} disabled={!isNextButtonEnabled}>Далее</button>
+                <Dropdown classes="dropdown--search" placeText="Выберите ССК"/>
+                <button className="submit submit--right" onClick={handleSubmit} disabled={!isNextButtonEnabled}>Далее</button>
             </>
         )}
       </div>

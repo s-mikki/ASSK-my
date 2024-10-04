@@ -1,5 +1,17 @@
+@media (max-width: 1300px) {
+  .modal__content {
+    padding: 30px 60px 40px;
+  }
+}
+
 @media (max-width: 1180px) {
-  .header__container {
-    margin: 0;
+  .modal__content {
+    padding: 30px 50px 40px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .modal__content {
+    padding: 30px 40px 40px;
   }
 }
