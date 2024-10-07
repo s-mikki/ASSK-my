@@ -188,19 +188,19 @@ body.fixed {
   overflow: hidden;
 }
 
-.modal__titles {
+.modal-head {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.modal__title {
+.modal-head__title {
   font-size: 20px;
   font-weight: 600;
   line-height: 22px;
 }
 
-.modal__text {
+.modal-head__text {
   color: var(--pale-blue);
   font-size: 16px;
   line-height: 24px;
@@ -256,6 +256,7 @@ body.fixed {
   justify-content: center;
   align-items: center;
   font-size: 12px;
+  line-height: 14px;
   color: var(--ruby);
   font-weight: 700;
   position: relative;
@@ -276,15 +277,6 @@ body.fixed {
 .progress__step--active {
   background-color: var(--ruby);
   color: white;
-}
-
-.organization__label {
-  width: 450px;
-  height: 46px;
-  padding: 14px 20px 14px 20px;
-  gap: 12px;
-  border-radius: 5px;
-  background-color: white;
 }
 
 .submit {
@@ -319,15 +311,49 @@ body.fixed {
 
 .organization__input {
   display: none;
+  outline: none;
 }
 
 .organization__label {
+  height: 46px;
+  padding: 14px 20px;
+  gap: 12px;
+  border-radius: 5px;
+  background-color: var(--white);
   display: flex;
   align-items: center;
   cursor: pointer;
   font-size: 16px;
+  line-height: 18px;
   position: relative;
   transition: color 0.3s ease;
+  width: 100%;
+  text-align: start;
+  color: var(--steelblue);
+}
+
+.organization__text {
+  height: 46px;
+  padding: 14px 20px;
+  gap: 12px;
+  border-radius: 5px;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  line-height: 18px;
+  position: relative;
+  transition: color 0.3s ease;
+  width: 100%;
+  text-align: start;
+  outline: none;
+  color: var(--steelblue);
+}
+
+.organization__text::placeholder {
+  color: rgba(var(--slate-opacity), 0.70);
 }
 
 .organization__label::before {
@@ -376,7 +402,6 @@ body.fixed {
 .organization {
   display: flex;
   min-height: 46px;
-  padding: 12px 20px;
   align-items: center;
   border: none;
   border-radius: 5px;
@@ -441,7 +466,7 @@ body.fixed {
 }
 
 .checkbox__input:checked + .checkbox__indicator {
-  background-image: url("/src/assets/images/checkboxOn.svg");
+  background-image: url("/src/assets/images/checkbox-on.svg");
   background-color:transparent;
   background-repeat: no-repeat;
   background-position: center;
@@ -469,10 +494,10 @@ body.fixed {
 }
 
 .react-select__placeholder {
-  color: rgba(var(--slate-opacity), 0.70);
+  color: rgba(var(--slate-opacity), 0.70) !important;
   font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 18px;
   margin: 0 !important;
 }
 
@@ -480,7 +505,7 @@ body.fixed {
   color: var(--steelblue) !important;
   font-size: 14px !important;
   font-weight: 400 !important;
-  line-height: 20px !important;
+  line-height: 18px !important;
 }
 
 .dropdown:after {
@@ -495,6 +520,7 @@ body.fixed {
   flex-shrink: 0;
   align-items: center;
   right: 20px;
+  transition: 0.3s;
 }
 
 .dropdown--search:before {
@@ -509,17 +535,19 @@ body.fixed {
   flex-shrink: 0;
   align-items: center;
   left: 20px;
-  z-index: 2;
+  z-index: 1;
 }
 
 .dropdown--open:after {
   transform: rotate(180deg) !important;
+  transition: 0.3s;
 }
 
 .react-select__control {
   display: flex;
   width: 100%;
-  align-items: center;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .react-select__value-container {
@@ -532,7 +560,7 @@ body.fixed {
 }
 
 .react-select__menu {
-  margin: 0 !important;
+  margin: 5px 0 0 0 !important;
 }
 
 .react-select__option {
@@ -543,11 +571,44 @@ body.fixed {
   line-height: 20px;
 }
 
-.react-select__option--is-focused {
-
+.react-select__input-container {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .react-select__option--is-selected {
   background-color: var(--aqua-2) !important;
 }
 
+.react-select__menu {
+  z-index: 2 !important;
+}
+
+.completion {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.completion__title {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.completion__link {
+  display: flex;
+  gap: 12px;
+  margin: 10px 0 0;
+}
+
+.completion__plus {
+
+}
+
+.completion__text {
+  color: var(--steelblue);
+  font-size: 16px;
+  line-height: 20px;
+}
